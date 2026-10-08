@@ -1,0 +1,48 @@
+.hero { display: flex; justify-content: space-between; align-items: center; gap: 20px; padding: 28px 32px; margin-bottom: 22px; color: #fff; border-radius: 20px; background: radial-gradient(circle at 90% 0%, rgba(95,224,238,.35), transparent 50%), linear-gradient(120deg, #0a2540, #0f4c81 70%, #0e7490); box-shadow: var(--shadow-lg); }
+.hero h1 { font-size: 30px; margin-bottom: 8px; }
+.hero p { color: #c4dcf0; max-width: 520px; }
+.hero-meter { display: flex; flex-direction: column; align-items: center; gap: 6px; }
+.hero-meter small { color: #c4dcf0; }
+.ring { --pct: 0; width: 92px; height: 92px; border-radius: 50%; display: grid; place-items: center; background: conic-gradient(#5fe0ee calc(var(--pct) * 1%), rgba(255,255,255,.18) 0); position: relative; }
+.ring::before { content: ''; position: absolute; inset: 9px; border-radius: 50%; background: #0d3f6b; }
+.ring span { position: relative; font-weight: 700; font-size: 20px; }
+
+.stat-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 18px; margin-bottom: 22px; }
+.two-col { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 18px; }
+.panel { background: #fff; border-radius: var(--radius); box-shadow: var(--shadow); padding: 20px 22px; }
+.panel-head { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; }
+.row-item { display: flex; justify-content: space-between; align-items: center; gap: 12px; padding: 12px 0; border-bottom: 1px solid var(--line); }
+.row-item:last-child { border-bottom: 0; }
+.row-item div { display: flex; flex-direction: column; }
+
+.room-grid, .notice-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(270px, 1fr)); gap: 18px; }
+.room-card, .notice-card { background: #fff; border-radius: var(--radius); box-shadow: var(--shadow); padding: 20px; transition: transform .25s var(--ease), box-shadow .25s; animation: fadeUp .4s var(--ease) backwards; }
+.room-card:hover, .notice-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-lg); }
+.room-card header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 14px; }
+.room-card h3 { font-size: 20px; }
+.beds { height: 7px; background: #e6eef6; border-radius: 99px; overflow: hidden; margin-bottom: 14px; }
+.beds div { height: 100%; border-radius: 99px; background: linear-gradient(90deg, var(--cyan), var(--blue)); transition: width .6s var(--ease); }
+.room-card dl { display: grid; grid-template-columns: repeat(3, 1fr); text-align: center; margin-bottom: 12px; }
+.room-card dt { font-size: 12.5px; color: var(--muted); }
+.room-card dd { font-size: 20px; font-weight: 700; }
+.room-card .actions { justify-content: flex-end; border-top: 1px solid var(--line); padding-top: 10px; }
+
+.notice-grid { grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); }
+.notice-card { border-top: 4px solid var(--green); }
+.notice-card.p-medium { border-top-color: var(--blue); }
+.notice-card.p-high { border-top-color: var(--red); }
+.notice-card header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; }
+.notice-card .date { display: flex; align-items: center; gap: 6px; color: var(--muted); font-size: 13px; }
+.notice-card h3 { margin-bottom: 8px; }
+.notice-card p { color: var(--muted); }
+
+.profile { display: grid; grid-template-columns: 300px 1fr; gap: 20px; align-items: start; }
+.profile-card { background: #fff; border-radius: var(--radius); box-shadow: var(--shadow); padding: 32px 20px; text-align: center; border-top: 80px solid transparent; border-image: linear-gradient(120deg, #0a2540, #0e7490) 1; margin-top: 0; }
+.profile-card .avatar { margin-top: -80px; }
+.profile-card p { color: var(--muted); }
+.details { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 6px 20px; }
+.detail { display: flex; gap: 14px; align-items: center; padding: 12px 0; }
+.detail > div { display: flex; flex-direction: column; min-width: 0; }
+.detail strong { font-weight: 600; overflow-wrap: anywhere; }
+.detail-icon { width: 40px; height: 40px; border-radius: 12px; display: grid; place-items: center; background: #e6f6f9; color: var(--cyan); flex-shrink: 0; }
+@media (max-width: 800px) { .profile { grid-template-columns: 1fr; } .hero { flex-direction: column; align-items: flex-start; padding: 22px; } .hero h1 { font-size: 24px; } }
